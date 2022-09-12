@@ -1,0 +1,85 @@
+$cor-1: #FCFAF0;
+$cor-2: #F3F0DD;
+$cor-3: #E1CA53;
+$cor-4: #232018;
+$cor-4-tp: #2320182b;
+$cor-4-shadow: rgba(35, 32, 24, 0.06);
+$cor-4-menu: rgba(35, 32, 24, 0.9);
+$cor-5: #E8E1C0;
+
+
+@mixin mediaQuery($size) {
+  @if $size ==xl {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+
+  @else if $size ==l {
+    @media (max-width: 1080px) {
+      @content;
+    }
+  }
+
+  @else if $size ==xm {
+    @media (max-width: 860px) {
+      @content;
+    }
+  }
+
+  @else if $size ==m {
+    @media (max-width: 780px) {
+      @content;
+    }
+  }
+
+  @else if $size ==s {
+    @media (max-width: 690px) {
+      @content;
+    }
+  }
+
+  @else if $size ==xs {
+    @media (max-width: 400px) {
+      @content;
+    }
+  }
+
+  @else if $size ==ms {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @else if $size ==l-height {
+    @media (min-height: 850px) and (min-width: 1500px) {
+      @content;
+    }
+  }
+}
+
+
+@mixin shadow($shadow...) {
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+}
+
+@mixin radGradient($grad) {
+  background: radial-gradient($grad);
+  background: -moz-radial-gradient($grad);
+  background: -o-radial-gradient($grad);
+  background: -webkit-radial-gradient($grad);
+}
+
+@mixin detailYellow($width) {
+  content: '';
+  width: $width;
+  background: $cor-3;
+  height: 1rem;
+  display: block;
+  position: absolute;
+  right: -.5rem;
+  bottom: .2rem;
+  z-index: -1;
+}

@@ -1,0 +1,69 @@
+/* @import url('https://fonts.googleapis.com/css?family=Titillium+Web'); */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+    background-color: #E1CA53;
+}
+
+.product {
+    border: 1px solid #eaeaec;
+    margin: -1px 19px 3px -1px;
+    padding: 10px;
+    text-align: center;
+    background-color: #232018;
+    border-radius: 3%;
+}
+
+table,
+th,
+tr {
+    text-align: center;
+}
+
+.title2 {
+    text-align: center;
+    color: #E8E1C0;
+    background-color: #232018;
+    padding: 2%;
+}
+
+h2 {
+    text-align: center;
+    color: #E8E1C0;
+    background-color: #232018;
+    padding: 2%;
+}
+
+table th {
+    background-color: #E8E1C0;
+}
+
+.btn {
+    background-color: #E8E1C0;
+}
+
+.text {
+    color: #E8E1C0;
+}
+
+.form-control {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.buy {
+    margin-top: 5px;
+    margin-bottom: 20%;
+    font-weight: bolder;
+}
+
+.remove{
+    background-color: #232018;
+    color: #E8E1C0;
+}

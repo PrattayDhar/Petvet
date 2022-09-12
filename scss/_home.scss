@@ -1,0 +1,228 @@
+#lobby {
+  position: relative;
+  background: url('../assets/blob-5.svg'), url('../assets/blob-4.svg'), url('../assets/linhas-1.svg'), url('../assets/linhas-2.svg');
+  background-repeat: no-repeat;
+  background-position: 25% top, 100%, top right, 27% 100%;
+  background-size: auto;
+
+  .lobby__container {
+    @extend .container;
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+    max-width: 1080px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(max-content, auto) minmax(400px, 650px) auto;
+    grid-gap: 1.5rem;
+
+    @include mediaQuery(xl) {
+      max-width: 1350px;
+    }
+
+    @include mediaQuery(l) {
+      grid-template-columns: minmax(max-content, auto) minmax(400px, 650px);
+      min-height: auto;
+    }
+
+    @include mediaQuery(m) {
+      grid-template-columns: auto;
+      height: initial;
+      max-height: 100%;
+      grid-gap: 3rem
+    }
+
+    @include mediaQuery(l-height) {
+      min-height: 850px;
+    }
+  }
+
+  .lobby__text {
+    grid-column: 1;
+    padding: 2rem 0;
+
+    h1 {
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 5rem;
+        height: 5rem;
+        background: url('../assets/blob-2.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        top: -1.5vw;
+        left: -1.3vw;
+        z-index: -1;
+      }
+
+      span {
+        position: relative;
+
+        &::before {
+          @include detailYellow(8rem)
+        }
+      }
+    }
+
+    .lobby__paragrafo {
+      margin: 1.5rem 0 3rem 0;
+    }
+
+    .lobby__btns {
+      display: flex;
+
+      a+a {
+        margin-left: 1rem;
+
+        @include mediaQuery(xs) {
+          margin-left: .5rem;
+
+        }
+      }
+    }
+
+    @include mediaQuery(m) {
+      text-align: center;
+      justify-self: center;
+    }
+  }
+
+  .lobby__img {
+    display: grid;
+    place-items: center;
+    position: relative;
+    grid-column: 2;
+
+    img {
+      width: 120%;
+      position: absolute;
+      bottom: -1rem;
+      right: -5rem;
+
+      @include mediaQuery(l) {
+        width: 100%;
+        bottom: 0;
+        right: 2rem;
+        position: relative;
+        transform: scale(1.05);
+      }
+
+      @include mediaQuery(m) {
+        max-width: 400px;
+        right: 0;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -3rem;
+      right: -1rem;
+      background-image: url('../assets/img-fundo-lobby.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.2) translateY(-5vw) translateX(1vw);
+
+      @include mediaQuery(l) {
+        transform: scale(.8) translateX(-2vw);
+      }
+    }
+
+    @include mediaQuery(l) {
+      grid-row: 1 / 4;
+    }
+
+    @include mediaQuery(m) {
+      display: none;
+    }
+  }
+
+  .lobby__address {
+    position: absolute;
+    left: 25vw;
+    width: 13rem;
+    text-align: right;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    span {
+      display: block;
+      grid-column: 1;
+    }
+
+    &::before {
+      content: url('../assets/icon-localizacao.svg');
+      grid-column: 2;
+      grid-row: 1 / 3;
+      text-align: center;
+      margin: auto;
+      margin-left: .8rem;
+    }
+
+    @include mediaQuery(l) {
+      left: calc(50% - 6.5rem);
+    }
+
+    @include mediaQuery(ms) {
+      left: initial;
+      right: 0
+    }
+  }
+
+  .lobby__operation {
+    grid-column: 3;
+    text-align: right;
+    align-self: end;
+    margin-bottom: 3rem;
+
+
+    div+div {
+      margin-top: .5rem;
+    }
+
+    .lobby__open-closed {
+      font-weight: 600;
+      margin-bottom: .5rem;
+
+      &::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        top: -2px;
+        left: -5px
+      }
+    }
+
+    @include mediaQuery(l) {
+      grid-column: 1;
+      text-align: left;
+    }
+
+    @include mediaQuery(m) {
+      text-align: center;
+      justify-self: center;
+    }
+  }
+
+  @include mediaQuery(l) {
+    background: url('../assets/blob-5.svg'), url('../assets/linhas-1.svg'), url('../assets/linhas-2.svg');
+    background-repeat: no-repeat;
+    background-position: 25% top, top right, 27% 100%;
+    background-size: auto;
+  }
+
+  @include mediaQuery(ms) {
+    background: url('../assets/blob-5.svg'), url('../assets/linhas-2.svg');
+    background-repeat: no-repeat;
+    background-position: 25% top, 27% 100%;
+    background-size: auto;
+  }
+}

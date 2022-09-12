@@ -1,0 +1,71 @@
+#values {
+  background: $cor-4;
+  padding: 3rem 0;
+  color: $cor-1;
+
+  .container {
+    max-width: 1080px;
+  }
+
+  .values__list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 1.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        background: $cor-1;
+        min-width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: block;
+        margin-right: 1rem;
+      }
+
+      &:nth-of-type(odd)::before {
+        background: $cor-3;
+      }
+
+      $i: 1;
+
+      @while $i < 5 {
+        &:nth-of-type(#{$i})::before {
+          background-image: url('../assets/icon-ca-#{$i}.webp');
+
+          background-size: 2rem;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        $i: $i + 1
+      }
+
+      @include mediaQuery(m) {
+        flex-direction: column;
+        align-items: center;
+        max-width: 10rem;
+
+        &::before {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    @include mediaQuery(l) {
+      grid-template-columns: repeat(2, auto);
+      grid-gap: 3rem;
+      justify-content: center;
+    }
+
+    @include mediaQuery(m) {
+      grid-template-columns: auto;
+      grid-gap: 4rem;
+      text-align: center;
+    }
+  }
+}
